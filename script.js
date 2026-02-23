@@ -50,7 +50,7 @@ async function fetchUserProfile() {
             ? `Welcome to my portfolio! ${user.bio} Here you can explore my GitHub repositories and projects.`
             : `Welcome to my portfolio! I'm a developer passionate about creating amazing projects. Here you can explore my GitHub repositories.`;
         
-        totalReposEl.textContent = user.public_repos.stargazers_count;
+        totalReposEl.textContent = user.public_repos;
         followersEl.textContent = user.followers;
         
     } catch (error) {
