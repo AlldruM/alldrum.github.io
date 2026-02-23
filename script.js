@@ -51,7 +51,7 @@ async function fetchUserProfile() {
             : `Welcome to my portfolio! I'm a developer passionate about creating amazing projects. Here you can explore my GitHub repositories.`;
         
         totalReposEl.textContent = user.public_repos;
-        followersEl.textContent = user.followers;
+        followersEl.textContent = GET /user/followers;
         
     } catch (error) {
         console.error('Error fetching user profile:', error);
