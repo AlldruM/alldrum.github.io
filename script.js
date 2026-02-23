@@ -51,11 +51,11 @@ async function fetchUserProfile() {
             : `Welcome to my portfolio! I'm a developer passionate about creating amazing projects. Here you can explore my GitHub repositories.`;
         
         totalReposEl.textContent = user.public_repos;
-        followersEl.textContent = GET /user/followers;
+        followersEl.textContent = user.followers;
         
     } catch (error) {
         console.error('Error fetching user profile:', error);
-        bio.textContent = '';
+        bio.textContent = 'Developer';
         aboutText.textContent = 'Welcome to my portfolio! Here you can explore my GitHub repositories and projects.';
     }
 }
