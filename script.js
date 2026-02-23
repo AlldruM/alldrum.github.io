@@ -50,7 +50,7 @@ async function fetchUserProfile() {
             ? `Welcome to my portfolio! ${user.bio} Here you can explore my GitHub repositories and projects.`
             : `Welcome to my portfolio! I'm a developer passionate about creating amazing projects. Here you can explore my GitHub repositories.`;
         
-        totalReposEl.textContent = user.public_repos;
+        totalReposEl.textContent = user.public_repos.stargazers_count;
         followersEl.textContent = user.followers;
         
     } catch (error) {
@@ -71,7 +71,7 @@ async function fetchRepositories() {
         // Calculate total stars
         const totalStars = repositories.reduce((sum, repo) => sum + repo.stargazers_count, 0);
         totalStarsEl.textContent = totalStars;
-        
+
         // Clear loading message
         repositoriesGrid.innerHTML = '';
         
@@ -91,6 +91,7 @@ async function fetchRepositories() {
         repositoriesGrid.innerHTML = '<div class="loading">Failed to load repositories. Please try again later.</div>';
     }
 }
+
 
 // Create repository card element
 function createRepoCard(repo) {
@@ -117,6 +118,7 @@ function createRepoCard(repo) {
     
     return card;
 }
+
 
 // Initialize
 async function init() {
