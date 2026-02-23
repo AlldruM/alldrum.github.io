@@ -45,7 +45,7 @@ async function fetchUserProfile() {
         // Update profile elements
         avatar.src = user.avatar_url;
         username.textContent = user.name || user.login;
-        bio.textContent = user.bio || 'Developer';
+        bio.textContent = user.bio;
         aboutText.textContent = user.bio 
             ? `Welcome to my portfolio! ${user.bio} Here you can explore my GitHub repositories and projects.`
             : `Welcome to my portfolio! I'm a developer passionate about creating amazing projects. Here you can explore my GitHub repositories.`;
